@@ -11,7 +11,7 @@
     </nav>
 
     <h1>Comando FIND</h1>
-    <p><strong>Descripción:</strong> El comando <code>find</code> se utiliza para buscar archivos y directorios en el sistema basándose en diferentes criterios (nombre, tamaño, permisos, fecha, etc.).</p>
+    <p><strong>Descripción:</strong> El comando <code>find</code> se utiliza para buscar archivos y directorios en el sistema basándose en diferentes criterios.</p>
 
     <section id="opciones">
         <h2>Opciones y Ejemplos</h2>
@@ -22,7 +22,30 @@
             <code>find . -name "documento.txt"</code>
         </article>
 
-        </section>
+        <article>
+            <h3>Opción: -perm</h3>
+            <p>Busca archivos según sus permisos (ejemplo: lectura y escritura para todos).</p>
+            <code>find . -perm 777</code>
+        </article>
 
+        <article>
+            <h3>Opción: -mtime</h3>
+            <p>Busca archivos modificados hace X días (ejemplo: hace menos de 2 días).</p>
+            <code>find . -mtime -2</code>
+        </article>
+
+        <article>
+            <h3>Opción: -size</h3>
+            <p>Busca archivos por su tamaño (ejemplo: más de 50MB).</p>
+            <code>find . -size +50M</code>
+        </article>
+
+        <article>
+            <h3>Opción: -exec</h3>
+            <p>Ejecuta un comando sobre los archivos encontrados.</p>
+            <code>find . -name "*.log" -exec rm {} \;</code>
+        </article>
+
+    </section>
 </body>
 </html>
